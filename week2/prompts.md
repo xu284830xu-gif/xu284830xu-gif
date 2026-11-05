@@ -56,6 +56,6 @@ Below: sheared pipe stubs, hanging cables, dripping water fading fast into pure 
 
 ### 第三轮总结  
 我感觉这一版给的还送，但是细节还是处理的不太好，我打算先生成图片看一下效果  
-![赛博朋克微型场景](cyberpunk-diorama.png)  
+![赛博朋克微型场景](image/cyberpunk-diorama.png)  
 
 感觉还行吧。
