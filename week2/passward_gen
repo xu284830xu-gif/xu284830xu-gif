@@ -1,0 +1,182 @@
+/*
+ * password_gen.c —— 命令行随机密码生成器（第二版，最终版）
+ *
+ * 用法：
+ *   password_gen <长度> [--digits]
+ *
+ *   长度     必填，1 ~ 128 的整数
+ *   --digits 只使用数字（默认为大小写字母 + 数字 + 符号）
+ *
+ * 退出码：
+ *   0  生成成功
+ *   2  参数错误（长度缺失 / 非整数 / 越界 / 未知选项）
+ *   3  系统随机数不可用
+ *
+ * 编译（MinGW）：
+ *   gcc -std=c99 -Wall -fexec-charset=GBK password_gen.c -o password_gen.exe -lbcrypt
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <errno.h>
+#include <windows.h>
+#include <bcrypt.h>
+#define MIN_LEN 1
+#define MAX_LEN 128
+#define POOL_LOWER  "abcdefghijklmnopqrstuvwxyz"
+#define POOL_UPPER  "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+#define POOL_DIGIT  "0123456789"
+#define POOL_SYMBOL "!@#$%^&*()-_=+[]{};:,.<>?"
+#define POOL_ALL    POOL_LOWER POOL_UPPER POOL_DIGIT POOL_SYMBOL
+/* 打印用法说明（参数错误时统一调用） */
+static void usage(const char *prog)
+{
+    fprintf(stderr,
+            "用法: %s <长度> [--digits]\n"
+            "  长度      1 ~ %d 的整数\n"
+            "  --digits  只使用数字\n"
+            "示例: %s 16\n"
+            "      %s 8 --digits\n",
+            prog, MAX_LEN, prog, prog);
+}
+/*
+ * 向系统申请 n 个随机字节。
+ * 使用 Windows 的 BCryptGenRandom，比 srand(time(NULL)) 可靠：
+ * 后者在同一秒内多次运行会得到完全相同的序列。
+ * 返回 1 成功，0 失败。
+ */
+static int rand_bytes(unsigned char *buf, int n)
+{
+    NTSTATUS st = BCryptGenRandom(NULL, buf, (ULONG)n,
+                                  BCRYPT_USE_SYSTEM_PREFERRED_RNG);
+    return st == 0;
+}
+/*
+ * 返回 [0, n) 之间的无偏随机整数。
+ * 直接把 32 位随机数对 n 取模会产生偏差（n 不能整除 2^32 时），
+ * 因此用拒绝采样：落在 [0, limit) 之外的丢弃重来。
+ * 返回 -1 表示系统随机数不可用。
+ */
+static int rand_below(int n)
+{
+    unsigned char b[4];
+    unsigned int v;
+    unsigned long long range = 0x100000000ULL;
+    unsigned long long limit = range - (range % (unsigned long long)n);
+    if (n <= 0) {
+        return -1;
+    }
+    for (;;) {
+        if (!rand_bytes(b, sizeof(b))) {
+            return -1;
+        }
+        v = (unsigned int)b[0]
+          | ((unsigned int)b[1] << 8)
+          | ((unsigned int)b[2] << 16)
+          | ((unsigned int)b[3] << 24);
+        if ((unsigned long long)v < limit) {
+            return (int)(v % (unsigned int)n);
+        }
+    }
+}
+/* 生成密码，成功返回 1，失败返回 0 */
+static int generate(char *out, int len, int digits_only)
+{
+    const char *pool = digits_only ? POOL_DIGIT : POOL_ALL;
+    int pool_len = (int)strlen(pool);
+    int i;
+    if (digits_only) {
+        /* 纯数字模式：直接从 0-9 取 */
+        for (i = 0; i < len; i++) {
+            int k = rand_below(10);
+            if (k < 0) {
+                return 0;
+            }
+            out[i] = POOL_DIGIT[k];
+        }
+    } else {
+        /*
+         * 混合模式：先保证四类字符各出现一次（长度够的话），
+         * 剩下的从总池子里取，避免出现"全是小写字母"这种弱密码。
+         */
+        const char *cats[4] = { POOL_LOWER, POOL_UPPER, POOL_DIGIT, POOL_SYMBOL };
+        int filled = 0;
+        if (len >= 4) {
+            for (i = 0; i < 4; i++) {
+                int k = rand_below((int)strlen(cats[i]));
+                if (k < 0) {
+                    return 0;
+                }
+                out[filled++] = cats[i][k];
+            }
+        }
+        while (filled < len) {
+            int k = rand_below(pool_len);
+            if (k < 0) {
+                return 0;
+            }
+            out[filled++] = pool[k];
+        }
+        /* Fisher-Yates 洗牌，把固定放在前四位的类别字符打散 */
+        for (i = len - 1; i > 0; i--) {
+            int k = rand_below(i + 1);
+            char t;
+            if (k < 0) {
+                return 0;
+            }
+            t = out[i];
+            out[i] = out[k];
+            out[k] = t;
+        }
+    }
+    out[len] = '\0';
+    return 1;
+}
+int main(int argc, char *argv[])
+{
+    int len;
+    int digits_only = 0;
+    int i;
+    long v;
+    char *end = NULL;
+    char out[MAX_LEN + 1];
+    if (argc < 2) {
+        fprintf(stderr, "错误：缺少长度参数\n");
+        usage(argv[0]);
+        return 2;
+    }
+    if (strcmp(argv[1], "-h") == 0 || strcmp(argv[1], "--help") == 0) {
+        usage(argv[0]);
+        return 0;
+    }
+    /* 解析长度：必须整体是整数，atoi("abc") 会静默返回 0，不能用 */
+    errno = 0;
+    v = strtol(argv[1], &end, 10);
+    if (end == argv[1] || *end != '\0') {
+        fprintf(stderr, "错误：长度必须是整数，收到 \"%s\"\n", argv[1]);
+        usage(argv[0]);
+        return 2;
+    }
+    if (errno == ERANGE || v < MIN_LEN || v > MAX_LEN) {
+        fprintf(stderr, "错误：长度需在 %d ~ %d 之间，收到 %ld\n",
+                MIN_LEN, MAX_LEN, v);
+        return 2;
+    }
+    len = (int)v;
+    /* 解析剩余选项 */
+    for (i = 2; i < argc; i++) {
+        if (strcmp(argv[i], "--digits") == 0) {
+            digits_only = 1;
+        } else {
+            fprintf(stderr, "错误：未知参数 \"%s\"\n", argv[i]);
+            usage(argv[0]);
+            return 2;
+        }
+    }
+    if (!generate(out, len, digits_only)) {
+        fprintf(stderr, "错误：系统随机数不可用\n");
+        return 3;
+    }
+    printf("%s\n", out);
+    return 0;
+}
