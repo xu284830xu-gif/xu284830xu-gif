@@ -120,11 +120,14 @@ curl -s http://127.0.0.1:8787/api/health
 
 ## 4. 域名 + HTTPS
 
-前提：域名已解析到 ECS 公网 IP，且大陆节点已备案。
+前提：域名已解析到 ECS 公网 IP。**大陆节点需备案，香港/海外节点不需要。**
 
 ```bash
-# 1) 反代
+# 1) 反代（Ubuntu/Debian）
+sudo apt install -y nginx
 sudo cp flower/flower-manager/deploy/nginx-huajian.conf /etc/nginx/conf.d/huajian.conf
+# Ubuntu 自带 default 站点是 default_server，不删掉的话用 IP 访问会落到默认页
+sudo rm -f /etc/nginx/sites-enabled/default
 sudo sed -i 's/server_name _;/server_name your-domain.com;/' /etc/nginx/conf.d/huajian.conf
 sudo nginx -t && sudo systemctl reload nginx
 
@@ -133,7 +136,9 @@ sudo apt install -y certbot python3-certbot-nginx
 sudo certbot --nginx -d your-domain.com
 ```
 
-也可以直接用**阿里云 SSL 证书服务**申请免费证书，下载 Nginx 格式后手工配置 `ssl_certificate` / `ssl_certificate_key`。
+阿里云 SSL 证书服务也提供免费证书，下载 Nginx 格式后手工配置 `ssl_certificate` / `ssl_certificate_key`。
+
+> 只想先用 IP 访问、不配域名：`server_name _;` 保持不动，删掉 default 站点后直接访问 `http://<公网IP>/` 即可。
 
 > 反代配置里 `proxy_buffering off` 是必须的：协作功能用 SSE（`/api/events`），缓冲区会把事件攒住不发，前端会退化成 2.5 秒轮询（能同步，但实时性变差）。
 
