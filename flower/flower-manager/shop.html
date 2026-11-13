@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#173f33">
+  <meta name="description" content="花间集在线花房 · 当日鲜花，同城配送，在线选花付款。">
+  <title>花间集 · 在线花房</title>
+  <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+  <div class="shop-shell">
+    <header class="shop-header">
+      <a class="shop-brand" href="/shop" aria-label="花间集在线花房">
+        <span class="shop-brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 36 36" fill="none">
+            <path d="M18 18C11 16 8 11 10 6c5-2 9 2 8 12Z" fill="currentColor" opacity=".9"/>
+            <path d="M18 18c7-2 10-7 8-12-5-2-9 2-8 12Z" fill="currentColor" opacity=".62"/>
+            <path d="M18 18c-2 7-7 10-12 8-2-5 2-9 12-8Z" fill="currentColor" opacity=".46"/>
+            <path d="M18 18c2 7 7 10 12 8 2-5-2-9-12-8Z" fill="currentColor" opacity=".74"/>
+            <circle cx="18" cy="18" r="3.1" fill="#d7b779"/>
+          </svg>
+        </span>
+        <span class="shop-brand-copy">
+          <strong id="shopBrand">花间集</strong>
+          <small>ONLINE FLOWER ATELIER</small>
+        </span>
+      </a>
+      <nav class="shop-nav" aria-label="页面导航">
+        <a href="#catalog">今日花材</a>
+        <a href="#service">配送说明</a>
+      </nav>
+      <div class="shop-header-actions">
+        <a class="shop-admin-link" href="/" title="店主入口">店主入口</a>
+        <button class="cart-button" id="cartButton" type="button" aria-label="打开购物袋">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 7V6a6 6 0 0 1 12 0v1"/><path d="M4 7h16l1 14H3L4 7Z"/></svg>
+          <span>购物袋</span>
+          <i id="cartCount">0</i>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="shop-hero">
+        <div class="hero-copy">
+          <p class="hero-eyebrow"><span></span> TODAY'S FLOWERS · 当日花材</p>
+          <h1>把今天的花，<br>送到在乎的人手里。</h1>
+          <p class="hero-desc">花间集每日从花市挑选当季鲜切花，手工修剪、包扎。到店自提，或同城配送，让一束花替你见面。</p>
+          <div class="hero-actions">
+            <a class="btn-shop-primary" href="#catalog">开始选花
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5"/></svg>
+            </a>
+            <button class="hero-text-btn" id="heroCartButton" type="button">看看购物袋 <span id="heroCartCount">0</span></button>
+          </div>
+          <div class="hero-notes">
+            <span><i class="dot dot-green"></i><strong id="heroShopName">花间集</strong> 当日鲜切</span>
+            <span><i class="dot dot-gold"></i>同城配送 · 到店自提</span>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-bouquet-card">
+            <svg class="hero-bouquet" viewBox="0 0 360 380" fill="none">
+              <path d="M180 338c-12-76-24-126-54-184M181 338c4-90 24-142 58-199M180 338c-42-55-71-97-102-153M182 338c39-62 70-107 100-164" stroke="#5b7d66" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+              <path d="M187 287c35 4 58-14 75-40-28-4-58 8-75 40Z" fill="#759179"/>
+              <path d="M166 305c-31 3-56-11-73-37 28-5 55 7 73 37Z" fill="#8ca487"/>
+              <path d="M209 260c35 1 57-17 72-44-29-2-58 11-72 44Z" fill="#6e8c72"/>
+              <path d="M151 254c-32-3-54-20-67-46 28-1 55 13 67 46Z" fill="#9db39a"/>
+              <path d="M141 327h78l22 28H119l22-28Z" fill="#e7d8ba"/>
+              <path d="M123 342h115l9 25H113l10-25Z" fill="#d8c39d"/>
+              <g transform="translate(118 100)">
+                <circle r="37" fill="#f4e7d2"/><circle r="31" fill="#efc9c8"/><circle r="24" fill="#eab3b8"/><circle r="15" fill="#f6ddd6"/><circle r="7" fill="#d8b574"/>
+              </g>
+              <g transform="translate(228 75)">
+                <circle r="32" fill="#f7ead9"/><circle r="26" fill="#e9d7e2"/><circle r="19" fill="#d9bfd2"/><circle r="12" fill="#f3e6ee"/><circle r="5" fill="#c6a365"/>
+              </g>
+              <g transform="translate(272 137)">
+                <circle r="28" fill="#f1e9cf"/><circle r="22" fill="#e7d29b"/><circle r="15" fill="#d8ba75"/><circle r="5" fill="#a68045"/>
+              </g>
+              <g transform="translate(88 154)">
+                <circle r="29" fill="#f5e3d8"/><circle r="23" fill="#efc1b1"/><circle r="16" fill="#e6a899"/><circle r="5" fill="#c89d6c"/>
+              </g>
+              <g transform="translate(176 35)">
+                <circle r="25" fill="#f8eedb"/><circle r="19" fill="#eed9d8"/><circle r="13" fill="#e6c0c2"/><circle r="4" fill="#c7a36b"/>
+              </g>
+              <g transform="translate(183 150)">
+                <circle r="24" fill="#f4ebd7"/><circle r="18" fill="#e2c2c0"/><circle r="11" fill="#d5a8aa"/><circle r="4" fill="#c6a369"/>
+              </g>
+            </svg>
+            <div class="hero-stamp"><span>HAND</span><strong>TIED</strong><span>DAILY</span></div>
+          </div>
+          <div class="hero-caption">
+            <span>NO. 11 / 今日花束</span>
+            <strong>奶油玫瑰 · 香槟洋桔梗</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="shop-catalog" id="catalog">
+        <div class="catalog-head">
+          <div>
+            <p class="section-kicker"><span></span> FLOWER MARKET</p>
+            <h2>今日花材</h2>
+            <p>库存实时同步，选中喜欢的花，加入购物袋。价格按枝 / 束计算。</p>
+          </div>
+          <div class="catalog-meta">
+            <span class="live-dot"></span><span id="catalogUpdated">正在同步花材</span>
+          </div>
+        </div>
+        <div class="catalog-toolbar">
+          <div class="category-tabs" id="categoryTabs" role="tablist"></div>
+          <label class="search-box">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+            <input id="searchInput" type="search" placeholder="搜索花名、颜色、品种" autocomplete="off">
+          </label>
+        </div>
+        <div class="product-grid" id="productGrid" aria-live="polite"></div>
+        <div class="catalog-empty" id="catalogEmpty" hidden>
+          <span class="empty-flower">✿</span>
+          <strong>暂时没有找到这枝花</strong>
+          <p>换个关键词，或看看其他花材。</p>
+          <button type="button" id="resetFilters">查看全部花材</button>
+        </div>
+      </section>
+
+      <section class="service-strip" id="service">
+        <div class="service-item"><span class="service-icon">✂</span><div><strong>当日修剪</strong><p>每束花发出前手工修枝、醒花。</p></div></div>
+        <div class="service-item"><span class="service-icon">⌂</span><div><strong>自提 / 配送</strong><p>到店自提，或同城 2 小时送达。</p></div></div>
+        <div class="service-item"><span class="service-icon">♡</span><div><strong>心意卡片</strong><p>下单备注想说的话，我们替你写。</p></div></div>
+      </section>
+    </main>
+
+    <footer class="shop-footer">
+      <div><strong id="footerShopName">花间集</strong><span>把日常过成一束花。</span></div>
+      <p>在线花房 · 当日鲜切 · 同城配送 <a href="/" class="footer-admin">店主入口</a></p>
+    </footer>
+  </div>
+
+  <div class="shop-layer" id="cartLayer" hidden>
+    <div class="shop-scrim" data-close-cart></div>
+    <aside class="cart-panel" aria-label="购物袋">
+      <header class="cart-head">
+        <div><span class="cart-kicker">YOUR BAG</span><h2>购物袋 <i id="cartPanelCount">0</i></h2></div>
+        <button class="icon-close" type="button" data-close-cart aria-label="关闭购物袋">×</button>
+      </header>
+      <div class="cart-items" id="cartItems"></div>
+      <footer class="cart-foot">
+        <div class="cart-total-row"><span>商品合计</span><strong id="cartTotal">¥0.00</strong></div>
+        <p class="cart-tip">配送费免收 · 到店自提或同城配送</p>
+        <button class="btn-shop-primary btn-block" id="checkoutButton" type="button" disabled>去结算 <span id="checkoutAmount">¥0.00</span></button>
+      </footer>
+    </aside>
+  </div>
+
+  <div class="shop-modal-layer" id="checkoutLayer" hidden>
+    <div class="shop-modal-backdrop" data-close-checkout></div>
+    <section class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+      <header class="modal-head">
+        <div><span class="modal-kicker">CHECKOUT</span><h2 id="checkoutTitle">确认你的花</h2></div>
+        <button class="icon-close" type="button" data-close-checkout aria-label="关闭结算">×</button>
+      </header>
+      <form id="checkoutForm" novalidate>
+        <div class="checkout-scroll">
+          <div class="checkout-summary" id="checkoutSummary"></div>
+          <div class="form-section">
+            <h3>收花人</h3>
+            <div class="form-grid">
+              <label class="shop-field"><span>称呼</span><input name="name" type="text" maxlength="20" placeholder="怎么称呼你" autocomplete="name" required></label>
+              <label class="shop-field"><span>联系电话</span><input name="phone" type="tel" inputmode="tel" maxlength="20" placeholder="用于配送联系" autocomplete="tel" required></label>
+            </div>
+          </div>
+          <div class="form-section">
+            <h3>怎么收花</h3>
+            <div class="fulfillment-tabs">
+              <label class="fulfillment-option is-active"><input type="radio" name="method" value="pickup" checked><span><b>到店自提</b><small>花间集合门口</small></span></label>
+              <label class="fulfillment-option"><input type="radio" name="method" value="delivery"><span><b>同城配送</b><small>2 小时内送达</small></span></label>
+            </div>
+            <label class="shop-field address-field" id="addressField" hidden><span>配送地址</span><textarea name="address" rows="2" maxlength="120" placeholder="街道、门牌号、小区楼栋"></textarea></label>
+          </div>
+          <div class="form-section">
+            <h3>什么时候要</h3>
+            <div class="form-grid">
+              <label class="shop-field"><span>日期</span><input name="date" type="date" required></label>
+              <label class="shop-field"><span>时段</span><select name="time"><option>09:00 - 12:00</option><option>12:00 - 15:00</option><option selected>15:00 - 18:00</option><option>18:00 - 21:00</option></select></label>
+            </div>
+            <label class="shop-field"><span>备注 / 想说的话</span><input name="note" type="text" maxlength="80" placeholder="例如：生日快乐，替我写一张卡片"></label>
+          </div>
+          <div class="form-section">
+            <h3>支付方式</h3>
+            <div class="payment-options">
+              <label class="payment-option is-active"><input type="radio" name="paymentMethod" value="wechat" checked><span class="pay-icon pay-wechat">微</span><span><b>微信支付</b><small>演示支付</small></span></label>
+              <label class="payment-option"><input type="radio" name="paymentMethod" value="alipay"><span class="pay-icon pay-alipay">支</span><span><b>支付宝</b><small>演示支付</small></span></label>
+            </div>
+          </div>
+          <p class="checkout-error" id="checkoutError"></p>
+        </div>
+        <footer class="checkout-foot">
+          <div><span>应付合计</span><strong id="checkoutTotal">¥0.00</strong></div>
+          <button class="btn-shop-primary" type="submit" id="payButton">去支付</button>
+        </footer>
+      </form>
+    </section>
+  </div>
+
+  <div class="shop-modal-layer" id="paymentLayer" hidden>
+    <div class="shop-modal-backdrop" data-close-payment></div>
+    <section class="payment-modal" role="dialog" aria-modal="true" aria-labelledby="paymentTitle">
+      <header class="modal-head">
+        <div><span class="modal-kicker">SECURE CHECKOUT</span><h2 id="paymentTitle">确认支付</h2></div>
+        <button class="icon-close" type="button" data-close-payment aria-label="关闭支付">×</button>
+      </header>
+      <div class="payment-body">
+        <div class="payment-amount"><span>应付金额</span><strong id="paymentAmount">¥0.00</strong></div>
+        <div class="payment-method-row" id="paymentMethodRow"></div>
+        <div class="payment-demo-note"><span>DEMO</span> 演示支付，不会产生真实扣款。确认后订单会同步到花间集后台。</div>
+        <div class="payment-check"><span>✓ 库存将被实时锁定并扣减</span><span>✓ 支付成功后生成正式订单号</span></div>
+      </div>
+      <footer class="modal-foot">
+        <button class="btn-ghost" type="button" data-close-payment>再想想</button>
+        <button class="btn-shop-primary" id="confirmPayButton" type="button">确认支付 <span id="confirmPayAmount">¥0.00</span></button>
+      </footer>
+    </section>
+  </div>
+
+  <div class="success-layer" id="successLayer" hidden>
+    <div class="success-card">
+      <div class="success-mark">✓</div>
+      <span class="success-kicker">PAYMENT SUCCESSFUL</span>
+      <h2>支付成功，花已经在路上。</h2>
+      <p class="success-desc">订单已同步到花间集后台，库存已实时扣减。花掌柜会尽快为你准备。</p>
+      <div class="success-order" id="successOrder"></div>
+      <div class="success-actions">
+        <button class="btn-shop-primary" type="button" id="continueShopping">继续选花</button>
+        <button class="btn-ghost" type="button" id="copyOrderNo">复制订单号</button>
+      </div>
+      <p class="success-foot">如需修改订单，请尽快联系花掌柜。</p>
+    </div>
+  </div>
+
+  <div class="shop-toast" id="shopToast" role="status" aria-live="polite"></div>
+  <script src="shop.js"></script>
+</body>
+</html>

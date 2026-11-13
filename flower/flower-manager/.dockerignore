@@ -1,0 +1,12 @@
+node_modules
+.git
+.env
+server/data/state.json
+server/logs
+server/bin
+exports/花间集-花卉经营管理.zip
+exports/*.zip
+flower-presentation
+collab-qa
+shop-qa
+package-test

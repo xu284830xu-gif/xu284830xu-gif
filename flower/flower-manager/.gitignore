@@ -1,0 +1,13 @@
+node_modules/
+.env
+server/data/state.json
+server/data/*.tmp
+server/logs/*.log
+server/bin/cloudflared.exe
+.dsh-office-*/
+mobile-qa/
+collab-qa/
+shop-qa/
+package-test/
+flower-presentation/
+*.zip

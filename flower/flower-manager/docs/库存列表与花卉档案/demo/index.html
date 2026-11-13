@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>花间集 · 库存列表 → 花卉档案（源码整理演示）</title>
+  <link rel="stylesheet" href="../../../styles.css">
+  <style>
+    .demo-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 34px;
+      border-bottom: 1px solid rgba(217, 211, 196, .8);
+      background: rgba(255, 253, 248, .82);
+      color: var(--ink);
+    }
+    .demo-bar strong { font-family: var(--serif); font-size: 14px; letter-spacing: .04em; }
+    .demo-bar span { margin-left: 10px; color: var(--muted); font-size: 11px; }
+    .demo-bar .demo-hint { margin: 0; font-size: 10px; color: var(--muted-light); }
+    @media (max-width: 720px) {
+      .demo-bar { flex-direction: column; align-items: flex-start; gap: 4px; padding: 12px 18px; }
+      .demo-bar span { display: block; margin: 3px 0 0; }
+      .demo-bar .demo-hint { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="demo-bar">
+    <div>
+      <strong>库存列表 → 花卉档案</strong>
+      <span>源码整理演示 · 点花名或行尾「更多」按钮打开档案；支持搜索、筛选、排序</span>
+    </div>
+    <span class="demo-hint">在地址后加 ?open=f_demo_1 可直接打开某一枝花</span>
+  </header>
+
+  <main class="view-root" id="viewRoot"></main>
+
+  <div class="modal-layer" id="modalLayer" hidden>
+    <div class="modal-backdrop" data-action="close-modal"></div>
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"></div>
+  </div>
+
+  <div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="false"></div>
+
+  <!-- 全部是主项目里摘录出来的真实代码，顺序和主项目 index.html 一致 -->
+  <script src="../src/1-数据与计算.js"></script>
+  <script src="../src/2-列表页.js"></script>
+  <script src="../src/3-详情页.js"></script>
+  <script src="../src/4-弹窗底座.js"></script>
+  <script src="../src/5-事件入口.js"></script>
+  <script src="demo.js"></script>
+</body>
+</html>

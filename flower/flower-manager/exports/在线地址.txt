@@ -1,0 +1,16 @@
+花间集 · 在线体验地址
+https://defend-spoke-ambient-unlimited.trycloudflare.com
+
+顾客在线花房（选花 / 结算 / 演示支付）
+https://defend-spoke-ambient-unlimited.trycloudflare.com/shop
+
+AI 直达页（打开自动弹出花掌柜 AI）
+https://defend-spoke-ambient-unlimited.trycloudflare.com/ai
+
+多人协作：把同一链接发给同事，用不同浏览器/手机打开。
+右上角头像显示在线人数，修改会实时同步；公网环境自动使用轮询降级。
+
+该地址为 Cloudflare Quick Tunnel 临时地址，依赖本机 Node 服务端运行。
+永久部署请参考 server/README.md 或使用 Dockerfile / render.yaml。
+
+在线体验二维码：在线体验二维码.png

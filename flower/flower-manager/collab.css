@@ -1,0 +1,157 @@
+/* =========================================================
+   花间集 · 多人协作界面
+   ========================================================= */
+.collab-avatar-btn {
+  position: relative;
+  padding: 0 !important;
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: visible;
+}
+.collab-avatar-btn .collab-face {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+.collab-avatar-btn.is-offline { opacity: .7; }
+.collab-avatar-btn.is-offline .collab-badge { background: var(--muted); }
+.collab-badge {
+  position: absolute;
+  top: -4px;
+  right: -5px;
+  min-width: 16px;
+  height: 16px;
+  display: grid;
+  place-items: center;
+  padding: 0 4px;
+  border: 2px solid var(--surface);
+  border-radius: 999px;
+  color: #fff;
+  background: var(--green);
+  font-size: 7px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.collab-pending {
+  position: fixed;
+  z-index: 62;
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  max-width: 360px;
+  min-height: 42px;
+  padding: 8px 12px;
+  border: 1px solid #d8c9a8;
+  border-radius: 11px;
+  color: #5e4b29;
+  background: #fff9ea;
+  box-shadow: 0 14px 34px rgba(35, 50, 39, .16);
+  font-size: 9.5px;
+  text-align: left;
+  animation: collabPendingIn .22s ease both;
+}
+.collab-pending[hidden] { display: none; }
+.collab-pending-dot {
+  width: 7px;
+  height: 7px;
+  flex: none;
+  border-radius: 50%;
+  background: #c39243;
+  box-shadow: 0 0 0 3px rgba(193, 154, 86, .16);
+  animation: collabPulse 1.6s infinite;
+}
+.collab-pending-copy { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.collab-pending strong { flex: none; color: var(--green); font-size: 9.5px; }
+.collab-pending:hover { background: #fffdf7; border-color: #c6b184; }
+@keyframes collabPulse { 50% { opacity: .35; transform: scale(.72); } }
+@keyframes collabPendingIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+.collab-intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 11px 12px;
+  border: 1px solid #dfe9e1;
+  border-radius: 10px;
+  background: var(--green-faint);
+}
+.collab-intro-icon {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  flex: none;
+  border-radius: 8px;
+  color: var(--green);
+  background: #fff;
+  border: 1px solid #dce8df;
+}
+.collab-intro-icon svg { width: 15px; height: 15px; }
+.collab-intro strong { display: block; color: #3d5a4b; font-size: 10.5px; }
+.collab-intro p { margin-top: 3px; color: #6e7f73; font-size: 9px; line-height: 1.6; }
+.collab-online-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-top: 2px;
+  color: var(--muted);
+  font-size: 9.5px;
+  font-weight: 700;
+}
+.collab-online-title span { color: var(--green); font-family: var(--serif); font-size: 14px; }
+.collab-online-list {
+  border: 1px solid #efebe1;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fcfaf4;
+}
+.collab-online-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 11px;
+  border-top: 1px solid #f1eee5;
+}
+.collab-online-row:first-child { border-top: 0; }
+.collab-online-row.is-me { background: #f4f9f4; }
+.collab-online-dot { width: 8px; height: 8px; border-radius: 50%; flex: none; box-shadow: 0 0 0 3px rgba(120, 160, 130, .11); }
+.collab-online-name { min-width: 0; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--ink-soft); font-size: 10.5px; font-weight: 700; }
+.collab-you { padding: 1px 5px; border-radius: 4px; color: var(--green); background: var(--green-soft); font-size: 8px; font-weight: 700; }
+.collab-online-status { color: #6f9d7d; font-size: 8px; }
+.collab-online-empty { padding: 18px 12px; color: var(--muted); text-align: center; font-size: 9.5px; }
+.collab-copy-btn {
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  border: 1px dashed #cdd9ce;
+  border-radius: 9px;
+  color: var(--green-mid);
+  background: #fbf8f0;
+  font-size: 9.5px;
+  font-weight: 700;
+}
+.collab-copy-btn:hover { border-color: #adc2b0; background: var(--green-faint); }
+.collab-copy-btn svg { width: 14px; height: 14px; }
+
+@media (max-width: 900px) {
+  .collab-pending {
+    left: 14px;
+    right: 14px;
+    bottom: calc(146px + env(safe-area-inset-bottom));
+    max-width: none;
+    justify-content: center;
+  }
+  .collab-avatar-btn { flex: none; }
+  .collab-online-row { min-height: 42px; }
+}

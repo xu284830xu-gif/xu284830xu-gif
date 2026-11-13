@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#123c32">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="花间集">
+  <meta name="format-detection" content="telephone=no">
+  <title>花间集 · 花卉经营管理</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23123c32'/%3E%3Cg fill='%23f0cfa0'%3E%3Cellipse cx='32' cy='18' rx='7' ry='12'/%3E%3Cellipse cx='32' cy='46' rx='7' ry='12'/%3E%3Cellipse cx='18' cy='32' rx='12' ry='7'/%3E%3Cellipse cx='46' cy='32' rx='12' ry='7'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='6' fill='%23f8f1df'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="主导航">
+      <div class="sidebar-inner">
+        <a class="brand" href="#" data-action="nav" data-view="dashboard" aria-label="回到经营总览">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <g fill="currentColor" opacity=".92">
+                <ellipse cx="24" cy="12.5" rx="5.4" ry="9.5"/>
+                <ellipse cx="24" cy="35.5" rx="5.4" ry="9.5"/>
+                <ellipse cx="12.5" cy="24" rx="9.5" ry="5.4"/>
+                <ellipse cx="35.5" cy="24" rx="9.5" ry="5.4"/>
+              </g>
+              <circle cx="24" cy="24" r="5.2" fill="#f6e6b6"/>
+            </svg>
+          </span>
+          <span class="brand-copy">
+            <strong id="brandName">花间集</strong>
+            <small>FLOWER ATELIER</small>
+          </span>
+        </a>
+
+        <nav class="nav">
+          <p class="nav-label">经营</p>
+          <button class="nav-item is-active" data-action="nav" data-view="dashboard">
+            <span class="nav-icon" data-icon="dashboard"></span>
+            <span>经营总览</span>
+          </button>
+          <button class="nav-item" data-action="nav" data-view="sales">
+            <span class="nav-icon" data-icon="cart"></span>
+            <span>快速开单</span>
+          </button>
+          <button class="nav-item" data-action="nav" data-view="records">
+            <span class="nav-icon" data-icon="receipt"></span>
+            <span>销售记录</span>
+          </button>
+
+          <p class="nav-label nav-label-spaced">商品</p>
+          <button class="nav-item" data-action="nav" data-view="inventory">
+            <span class="nav-icon" data-icon="box"></span>
+            <span>库存管理</span>
+            <span class="nav-count" id="navLowCount" hidden>0</span>
+          </button>
+          <button class="nav-item" data-action="nav" data-view="pricing">
+            <span class="nav-icon" data-icon="tag"></span>
+            <span>价格行情</span>
+          </button>
+
+          <p class="nav-label nav-label-spaced">分析</p>
+          <button class="nav-item" data-action="nav" data-view="finance">
+            <span class="nav-icon" data-icon="chart"></span>
+            <span>盈利分析</span>
+          </button>
+
+          <p class="nav-label nav-label-spaced">渠道</p>
+          <a class="nav-item nav-store-link" href="/shop" target="_blank" rel="noopener">
+            <span class="nav-icon" data-icon="arrow-up-right"></span>
+            <span>线上花店</span>
+            <span class="nav-store-pill">顾客端</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-note">
+          <span class="note-dot"></span>
+          <p>数据已同步云端<br><span>多人可同时协作</span></p>
+        </div>
+
+        <div class="sidebar-bottom">
+          <button class="sidebar-setting" data-action="open-settings">
+            <span class="nav-icon" data-icon="settings"></span>
+            <span>店铺与数据</span>
+            <span class="sidebar-setting-arrow" data-icon="chevron-right"></span>
+          </button>
+          <div class="studio-sign">
+            <span>花间集 · 经营工作台</span>
+            <span class="local-pill">LOCAL</span>
+          </div>
+        </div>
+      </div>
+      <svg class="sidebar-botanical" viewBox="0 0 280 360" fill="none" aria-hidden="true">
+        <path d="M198 360C198 287 162 238 95 194" stroke="currentColor" stroke-width="1.1"/>
+        <path d="M112 207C75 203 49 183 33 151C70 151 99 170 112 207Z" stroke="currentColor" stroke-width="1"/>
+        <path d="M151 245C186 225 219 224 248 239C223 264 183 267 151 245Z" stroke="currentColor" stroke-width="1"/>
+        <path d="M174 292C135 291 105 274 84 244C122 239 154 258 174 292Z" stroke="currentColor" stroke-width="1"/>
+        <path d="M198 332C233 310 258 307 280 313" stroke="currentColor" stroke-width="1"/>
+        <circle cx="58" cy="101" r="26" stroke="currentColor" stroke-width="1"/>
+        <path d="M58 75V127M32 101H84M40 83L76 119M76 83L40 119" stroke="currentColor" stroke-width=".8"/>
+      </svg>
+    </aside>
+
+    <div class="sidebar-scrim" data-action="close-sidebar" aria-hidden="true"></div>
+
+    <div class="workspace">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-btn menu-btn" data-action="toggle-sidebar" aria-label="打开导航" title="打开导航">
+            <span data-icon="menu"></span>
+          </button>
+          <div class="topbar-context">
+            <span class="topbar-kicker" id="topbarKicker">经营总览</span>
+            <span class="topbar-date" id="topbarDate">—</span>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <span class="save-indicator" id="saveIndicator"><i></i><span>本地已保存</span></span>
+          <button class="icon-btn" data-action="open-settings" aria-label="店铺与数据" title="店铺与数据">
+            <span data-icon="settings"></span>
+          </button>
+          <span class="topbar-avatar" aria-hidden="true">花</span>
+        </div>
+      </header>
+
+      <main class="view-root" id="viewRoot"></main>
+    </div>
+  </div>
+
+  <nav class="mobile-tabbar" id="mobileTabbar" aria-label="手机快捷导航">
+    <button class="mobile-tab" data-action="nav" data-view="dashboard" aria-label="经营总览">
+      <span class="mobile-tab-icon" data-icon="dashboard"></span>
+      <span>首页</span>
+    </button>
+    <button class="mobile-tab" data-action="nav" data-view="inventory" aria-label="库存管理">
+      <span class="mobile-tab-icon" data-icon="box"></span>
+      <span>库存</span>
+    </button>
+    <button class="mobile-tab mobile-tab-primary" data-action="nav" data-view="sales" aria-label="快速开单">
+      <span class="mobile-tab-icon" data-icon="cart"></span>
+      <span>开单</span>
+    </button>
+    <button class="mobile-tab" data-action="nav" data-view="records" aria-label="销售记录">
+      <span class="mobile-tab-icon" data-icon="receipt"></span>
+      <span>记录</span>
+    </button>
+    <button class="mobile-tab" data-action="nav" data-view="finance" aria-label="盈利分析">
+      <span class="mobile-tab-icon" data-icon="chart"></span>
+      <span>分析</span>
+    </button>
+  </nav>
+
+  <div class="modal-layer" id="modalLayer" hidden>
+    <div class="modal-backdrop" data-action="close-modal"></div>
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"></div>
+  </div>
+
+  <div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="false"></div>
+
+  <script src="data.js"></script>
+  <script src="views.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

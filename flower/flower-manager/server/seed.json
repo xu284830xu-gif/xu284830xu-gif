@@ -1,0 +1,1066 @@
+{
+  "version": 1,
+  "settings": {
+    "shopName": "花间集",
+    "owner": "花掌柜",
+    "createdAt": "2026-11-11T10:51:01.787Z"
+  },
+  "flowers": [
+    {
+      "id": "f_seed_1",
+      "name": "自由精神玫瑰",
+      "variety": "自由精神",
+      "category": "玫瑰",
+      "color": "粉色",
+      "grade": "A",
+      "unit": "枝",
+      "cost": 8.5,
+      "price": 18,
+      "stock": 120,
+      "minStock": 40,
+      "supplier": "云岭花材",
+      "location": "冷藏柜 A1",
+      "note": "花瓣层叠，适合作为花束主花",
+      "createdAt": "2026-10-08T02:20:00.000Z",
+      "restockedAt": "2026-11-10T02:20:00.000Z",
+      "active": true
+    },
+    {
+      "id": "f_seed_2",
+      "name": "白荔枝玫瑰",
+      "variety": "白荔枝",
+      "category": "玫瑰",
+      "color": "白色",
+      "grade": "A",
+      "unit": "枝",
+      "cost": 7.2,
+      "price": 15,
+      "stock": 28,
+      "minStock": 30,
+      "supplier": "云岭花材",
+      "location": "冷藏柜 A2",
+      "note": "香气清甜，婚礼花艺常用",
+      "createdAt": "2026-10-14T02:20:00.000Z",
+      "restockedAt": "2026-11-07T02:20:00.000Z",
+      "active": true
+    },
+    {
+      "id": "f_seed_3",
+      "name": "香槟洋桔梗",
+      "variety": "香槟初恋",
+      "category": "洋桔梗",
+      "color": "香槟",
+      "grade": "A",
+      "unit": "枝",
+      "cost": 3.2,
+      "price": 8,
+      "stock": 180,
+      "minStock": 50,
+      "supplier": "四季鲜花",
+      "location": "冷藏柜 B1",
+      "note": "花期长，适合日常花束搭配",
+      "createdAt": "2026-10-16T02:20:00.000Z",
+      "restockedAt": "2026-11-09T02:20:00.000Z",
+      "active": true
+    },
+    {
+      "id": "f_seed_4",
+      "name": "粉色印记郁金香",
+      "variety": "粉色印记",
+      "category": "郁金香",
+      "color": "粉色",
+      "grade": "A",
+      "unit": "枝",
+      "cost": 5.5,
+      "price": 12,
+      "stock": 64,
+      "minStock": 30,
+      "supplier": "荷兰花坊",
+      "location": "冷藏柜 B2",
+      "note": "春季畅销款，注意保持直立吸水",
+      "createdAt": "2026-10-20T02:20:00.000Z",
+      "restockedAt": "2026-11-08T02:20:00.000Z",
+      "active": true
+    },
+    {
+      "id": "f_seed_5",
+      "name": "奶油向日葵",
+      "variety": "奶油",
+      "category": "配花",
+      "color": "黄色",
+      "grade": "B",
+      "unit": "枝",
+      "cost": 4,
+      "price": 10,
+      "stock": 12,
+      "minStock": 20,
+      "supplier": "田野花材",
+      "location": "常温花架 C1",
+      "note": "阳光感强，适合单支包装",
+      "createdAt": "2026-10-23T02:20:00.000Z",
+      "restockedAt": "2026-11-04T02:20:00.000Z",
+      "active": true
+    },
+    {
+      "id": "f_seed_6",
+      "name": "无尽夏绣球",
+      "variety": "无尽夏",
+      "category": "绣球",
+      "color": "蓝色",
+      "grade": "A",
+      "unit": "枝",
+      "cost": 18,
+      "price": 38,
+      "stock": 23,
+      "minStock": 10,
+      "supplier": "江南花圃",
+      "location": "冷藏柜 A3",
+      "note": "易脱水，到店后深水养护",
+      "createdAt": "2026-10-17T02:20:00.000Z",
+      "restockedAt": "2026-11-10T02:20:00.000Z",
+      "active": true
+    },
+    {
+      "id": "f_seed_7",
+      "name": "圆叶尤加利",
+      "variety": "圆叶",
+      "category": "叶材",
+      "color": "绿色",
+      "grade": "A",
+      "unit": "扎",
+      "cost": 12,
+      "price": 28,
+      "stock": 42,
+      "minStock": 15,
+      "supplier": "山野叶材",
+      "location": "常温花架 C2",
+      "note": "花束配叶，可自然风干",
+      "createdAt": "2026-10-11T02:20:00.000Z",
+      "restockedAt": "2026-11-06T02:20:00.000Z",
+      "active": true
+    },
+    {
+      "id": "f_seed_8",
+      "name": "白花蝴蝶兰",
+      "variety": "白花",
+      "category": "兰花",
+      "color": "白色",
+      "grade": "A",
+      "unit": "盆",
+      "cost": 45,
+      "price": 98,
+      "stock": 9,
+      "minStock": 5,
+      "supplier": "兰亭园艺",
+      "location": "展示台 D1",
+      "note": "盆栽礼赠款，避免冷风直吹",
+      "createdAt": "2026-10-02T02:20:00.000Z",
+      "restockedAt": "2026-11-05T02:20:00.000Z",
+      "active": true
+    }
+  ],
+  "orders": [
+    {
+      "id": "o_seed_1",
+      "no": "SO-20261111-001",
+      "date": "2026-11-11T01:00:00.000Z",
+      "customer": "林晚",
+      "payment": "微信",
+      "note": "生日花束，卡片写“晚风与花”",
+      "lines": [
+        {
+          "flowerId": "f_seed_1",
+          "name": "自由精神玫瑰",
+          "variety": "自由精神",
+          "unit": "枝",
+          "qty": 6,
+          "unitPrice": 18,
+          "cost": 8.5,
+          "subtotal": 108
+        },
+        {
+          "flowerId": "f_seed_3",
+          "name": "香槟洋桔梗",
+          "variety": "香槟初恋",
+          "unit": "枝",
+          "qty": 10,
+          "unitPrice": 8,
+          "cost": 3.2,
+          "subtotal": 80
+        }
+      ],
+      "total": 188,
+      "cost": 83,
+      "profit": 105,
+      "status": "completed",
+      "refundedAt": null
+    },
+    {
+      "id": "o_seed_2",
+      "no": "SO-20261111-002",
+      "date": "2026-11-11T02:07:00.000Z",
+      "customer": "周先生",
+      "payment": "支付宝",
+      "note": "自提",
+      "lines": [
+        {
+          "flowerId": "f_seed_6",
+          "name": "无尽夏绣球",
+          "variety": "无尽夏",
+          "unit": "枝",
+          "qty": 1,
+          "unitPrice": 38,
+          "cost": 18,
+          "subtotal": 38
+        },
+        {
+          "flowerId": "f_seed_7",
+          "name": "圆叶尤加利",
+          "variety": "圆叶",
+          "unit": "扎",
+          "qty": 2,
+          "unitPrice": 28,
+          "cost": 12,
+          "subtotal": 56
+        }
+      ],
+      "total": 94,
+      "cost": 42,
+      "profit": 52,
+      "status": "completed",
+      "refundedAt": null
+    },
+    {
+      "id": "o_seed_3",
+      "no": "SO-20261110-003",
+      "date": "2026-11-10T03:14:00.000Z",
+      "customer": "陈小姐",
+      "payment": "微信",
+      "note": "",
+      "lines": [
+        {
+          "flowerId": "f_seed_4",
+          "name": "粉色印记郁金香",
+          "variety": "粉色印记",
+          "unit": "枝",
+          "qty": 12,
+          "unitPrice": 12,
+          "cost": 5.5,
+          "subtotal": 144
+        }
+      ],
+      "total": 144,
+      "cost": 66,
+      "profit": 78,
+      "status": "completed",
+      "refundedAt": null
+    },
+    {
+      "id": "o_seed_4",
+      "no": "SO-20261109-004",
+      "date": "2026-11-09T04:21:00.000Z",
+      "customer": "苏禾",
+      "payment": "现金",
+      "note": "日常瓶插花",
+      "lines": [
+        {
+          "flowerId": "f_seed_2",
+          "name": "白荔枝玫瑰",
+          "variety": "白荔枝",
+          "unit": "枝",
+          "qty": 8,
+          "unitPrice": 15,
+          "cost": 7.2,
+          "subtotal": 120
+        },
+        {
+          "flowerId": "f_seed_3",
+          "name": "香槟洋桔梗",
+          "variety": "香槟初恋",
+          "unit": "枝",
+          "qty": 6,
+          "unitPrice": 8,
+          "cost": 3.2,
+          "subtotal": 48
+        }
+      ],
+      "total": 168,
+      "cost": 76.8,
+      "profit": 91.2,
+      "status": "completed",
+      "refundedAt": null
+    },
+    {
+      "id": "o_seed_5",
+      "no": "SO-20261108-005",
+      "date": "2026-11-08T05:28:00.000Z",
+      "customer": "沈女士",
+      "payment": "银行卡",
+      "note": "乔迁礼物",
+      "lines": [
+        {
+          "flowerId": "f_seed_8",
+          "name": "白花蝴蝶兰",
+          "variety": "白花",
+          "unit": "盆",
+          "qty": 1,
+          "unitPrice": 98,
+          "cost": 45,
+          "subtotal": 98
+        }
+      ],
+      "total": 98,
+      "cost": 45,
+      "profit": 53,
+      "status": "completed",
+      "refundedAt": null
+    },
+    {
+      "id": "o_seed_6",
+      "no": "SO-20261107-006",
+      "date": "2026-11-07T06:35:00.000Z",
+      "customer": "顾言",
+      "payment": "微信",
+      "note": "纪念日花束",
+      "lines": [
+        {
+          "flowerId": "f_seed_1",
+          "name": "自由精神玫瑰",
+          "variety": "自由精神",
+          "unit": "枝",
+          "qty": 10,
+          "unitPrice": 18,
+          "cost": 8.5,
+          "subtotal": 180
+        },
+        {
+          "flowerId": "f_seed_5",
+          "name": "奶油向日葵",
+          "variety": "奶油",
+          "unit": "枝",
+          "qty": 3,
+          "unitPrice": 10,
+          "cost": 4,
+          "subtotal": 30
+        }
+      ],
+      "total": 210,
+      "cost": 97,
+      "profit": 113,
+      "status": "completed",
+      "refundedAt": null
+    },
+    {
+      "id": "o_seed_7",
+      "no": "SO-20261106-007",
+      "date": "2026-11-06T07:42:00.000Z",
+      "customer": "鹿鸣花艺",
+      "payment": "支付宝",
+      "note": "同行批发，自取",
+      "lines": [
+        {
+          "flowerId": "f_seed_3",
+          "name": "香槟洋桔梗",
+          "variety": "香槟初恋",
+          "unit": "枝",
+          "qty": 20,
+          "unitPrice": 8,
+          "cost": 3.2,
+          "subtotal": 160
+        }
+      ],
+      "total": 160,
+      "cost": 64,
+      "profit": 96,
+      "status": "completed",
+      "refundedAt": null
+    },
+    {
+      "id": "o_seed_8",
+      "no": "SO-20261105-008",
+      "date": "2026-11-05T08:49:00.000Z",
+      "customer": "唐可可",
+      "payment": "微信",
+      "note": "",
+      "lines": [
+        {
+          "flowerId": "f_seed_6",
+          "name": "无尽夏绣球",
+          "variety": "无尽夏",
+          "unit": "枝",
+          "qty": 2,
+          "unitPrice": 38,
+          "cost": 18,
+          "subtotal": 76
+        },
+        {
+          "flowerId": "f_seed_7",
+          "name": "圆叶尤加利",
+          "variety": "圆叶",
+          "unit": "扎",
+          "qty": 1,
+          "unitPrice": 28,
+          "cost": 12,
+          "subtotal": 28
+        }
+      ],
+      "total": 104,
+      "cost": 48,
+      "profit": 56,
+      "status": "completed",
+      "refundedAt": null
+    },
+    {
+      "id": "o_seed_9",
+      "no": "SO-20261103-009",
+      "date": "2026-11-03T09:56:00.000Z",
+      "customer": "许女士",
+      "payment": "现金",
+      "note": "公司前台周花",
+      "lines": [
+        {
+          "flowerId": "f_seed_4",
+          "name": "粉色印记郁金香",
+          "variety": "粉色印记",
+          "unit": "枝",
+          "qty": 20,
+          "unitPrice": 12,
+          "cost": 5.5,
+          "subtotal": 240
+        }
+      ],
+      "total": 240,
+      "cost": 110,
+      "profit": 130,
+      "status": "completed",
+      "refundedAt": null
+    },
+    {
+      "id": "o_seed_10",
+      "no": "SO-20261101-010",
+      "date": "2026-11-01T01:03:00.000Z",
+      "customer": "江屿",
+      "payment": "微信",
+      "note": "求婚花束",
+      "lines": [
+        {
+          "flowerId": "f_seed_1",
+          "name": "自由精神玫瑰",
+          "variety": "自由精神",
+          "unit": "枝",
+          "qty": 12,
+          "unitPrice": 18,
+          "cost": 8.5,
+          "subtotal": 216
+        },
+        {
+          "flowerId": "f_seed_2",
+          "name": "白荔枝玫瑰",
+          "variety": "白荔枝",
+          "unit": "枝",
+          "qty": 6,
+          "unitPrice": 15,
+          "cost": 7.2,
+          "subtotal": 90
+        }
+      ],
+      "total": 306,
+      "cost": 145.2,
+      "profit": 160.8,
+      "status": "completed",
+      "refundedAt": null
+    },
+    {
+      "id": "o_seed_11",
+      "no": "SO-20261031-011",
+      "date": "2026-10-31T02:10:00.000Z",
+      "customer": "程小姐",
+      "payment": "支付宝",
+      "note": "客户临时取消，已原路退款",
+      "lines": [
+        {
+          "flowerId": "f_seed_1",
+          "name": "自由精神玫瑰",
+          "variety": "自由精神",
+          "unit": "枝",
+          "qty": 2,
+          "unitPrice": 18,
+          "cost": 8.5,
+          "subtotal": 36
+        }
+      ],
+      "total": 36,
+      "cost": 17,
+      "profit": 19,
+      "status": "refunded",
+      "refundedAt": "2026-11-01T08:00:00.000Z"
+    },
+    {
+      "id": "o_seed_12",
+      "no": "SO-20261029-012",
+      "date": "2026-10-29T03:17:00.000Z",
+      "customer": "白露",
+      "payment": "微信",
+      "note": "",
+      "lines": [
+        {
+          "flowerId": "f_seed_5",
+          "name": "奶油向日葵",
+          "variety": "奶油",
+          "unit": "枝",
+          "qty": 8,
+          "unitPrice": 10,
+          "cost": 4,
+          "subtotal": 80
+        },
+        {
+          "flowerId": "f_seed_3",
+          "name": "香槟洋桔梗",
+          "variety": "香槟初恋",
+          "unit": "枝",
+          "qty": 12,
+          "unitPrice": 8,
+          "cost": 3.2,
+          "subtotal": 96
+        }
+      ],
+      "total": 176,
+      "cost": 70.4,
+      "profit": 105.6,
+      "status": "completed",
+      "refundedAt": null
+    },
+    {
+      "id": "o_seed_13",
+      "no": "SO-20261025-013",
+      "date": "2026-10-25T04:24:00.000Z",
+      "customer": "何先生",
+      "payment": "银行卡",
+      "note": "办公室绿植与花礼",
+      "lines": [
+        {
+          "flowerId": "f_seed_8",
+          "name": "白花蝴蝶兰",
+          "variety": "白花",
+          "unit": "盆",
+          "qty": 2,
+          "unitPrice": 98,
+          "cost": 45,
+          "subtotal": 196
+        },
+        {
+          "flowerId": "f_seed_7",
+          "name": "圆叶尤加利",
+          "variety": "圆叶",
+          "unit": "扎",
+          "qty": 3,
+          "unitPrice": 28,
+          "cost": 12,
+          "subtotal": 84
+        }
+      ],
+      "total": 280,
+      "cost": 126,
+      "profit": 154,
+      "status": "completed",
+      "refundedAt": null
+    },
+    {
+      "id": "o_seed_14",
+      "no": "SO-20261021-014",
+      "date": "2026-10-21T05:31:00.000Z",
+      "customer": "林晚",
+      "payment": "微信",
+      "note": "老客复购",
+      "lines": [
+        {
+          "flowerId": "f_seed_1",
+          "name": "自由精神玫瑰",
+          "variety": "自由精神",
+          "unit": "枝",
+          "qty": 15,
+          "unitPrice": 18,
+          "cost": 8.5,
+          "subtotal": 270
+        },
+        {
+          "flowerId": "f_seed_6",
+          "name": "无尽夏绣球",
+          "variety": "无尽夏",
+          "unit": "枝",
+          "qty": 2,
+          "unitPrice": 38,
+          "cost": 18,
+          "subtotal": 76
+        }
+      ],
+      "total": 346,
+      "cost": 163.5,
+      "profit": 182.5,
+      "status": "completed",
+      "refundedAt": null
+    },
+    {
+      "id": "o_seed_15",
+      "no": "SO-20261016-015",
+      "date": "2026-10-16T06:38:00.000Z",
+      "customer": "南栀",
+      "payment": "支付宝",
+      "note": "",
+      "lines": [
+        {
+          "flowerId": "f_seed_3",
+          "name": "香槟洋桔梗",
+          "variety": "香槟初恋",
+          "unit": "枝",
+          "qty": 25,
+          "unitPrice": 8,
+          "cost": 3.2,
+          "subtotal": 200
+        },
+        {
+          "flowerId": "f_seed_4",
+          "name": "粉色印记郁金香",
+          "variety": "粉色印记",
+          "unit": "枝",
+          "qty": 10,
+          "unitPrice": 12,
+          "cost": 5.5,
+          "subtotal": 120
+        }
+      ],
+      "total": 320,
+      "cost": 135,
+      "profit": 185,
+      "status": "completed",
+      "refundedAt": null
+    },
+    {
+      "id": "o_seed_16",
+      "no": "SO-20261009-016",
+      "date": "2026-10-09T07:45:00.000Z",
+      "customer": "八月花房",
+      "payment": "微信",
+      "note": "月度批发订单",
+      "lines": [
+        {
+          "flowerId": "f_seed_1",
+          "name": "自由精神玫瑰",
+          "variety": "自由精神",
+          "unit": "枝",
+          "qty": 20,
+          "unitPrice": 18,
+          "cost": 8.5,
+          "subtotal": 360
+        },
+        {
+          "flowerId": "f_seed_7",
+          "name": "圆叶尤加利",
+          "variety": "圆叶",
+          "unit": "扎",
+          "qty": 4,
+          "unitPrice": 28,
+          "cost": 12,
+          "subtotal": 112
+        }
+      ],
+      "total": 472,
+      "cost": 218,
+      "profit": 254,
+      "status": "completed",
+      "refundedAt": null
+    },
+    {
+      "id": "o_seed_17",
+      "no": "SO-20261004-017",
+      "date": "2026-10-04T08:52:00.000Z",
+      "customer": "秦小姐",
+      "payment": "现金",
+      "note": "",
+      "lines": [
+        {
+          "flowerId": "f_seed_6",
+          "name": "无尽夏绣球",
+          "variety": "无尽夏",
+          "unit": "枝",
+          "qty": 3,
+          "unitPrice": 38,
+          "cost": 18,
+          "subtotal": 114
+        },
+        {
+          "flowerId": "f_seed_5",
+          "name": "奶油向日葵",
+          "variety": "奶油",
+          "unit": "枝",
+          "qty": 10,
+          "unitPrice": 10,
+          "cost": 4,
+          "subtotal": 100
+        }
+      ],
+      "total": 214,
+      "cost": 94,
+      "profit": 120,
+      "status": "completed",
+      "refundedAt": null
+    },
+    {
+      "id": "o_seed_18",
+      "no": "SO-20260928-018",
+      "date": "2026-09-28T09:59:00.000Z",
+      "customer": "顾言",
+      "payment": "微信",
+      "note": "节日送礼",
+      "lines": [
+        {
+          "flowerId": "f_seed_8",
+          "name": "白花蝴蝶兰",
+          "variety": "白花",
+          "unit": "盆",
+          "qty": 3,
+          "unitPrice": 98,
+          "cost": 45,
+          "subtotal": 294
+        }
+      ],
+      "total": 294,
+      "cost": 135,
+      "profit": 159,
+      "status": "completed",
+      "refundedAt": null
+    }
+  ],
+  "priceHistory": [
+    {
+      "id": "ph_seed_1",
+      "flowerId": "f_seed_1",
+      "date": "2026-10-20T07:30:00.000Z",
+      "oldPrice": 15,
+      "newPrice": 16,
+      "oldCost": 7.8,
+      "newCost": 8,
+      "reason": "供应商小幅调价"
+    },
+    {
+      "id": "ph_seed_2",
+      "flowerId": "f_seed_1",
+      "date": "2026-11-02T07:30:00.000Z",
+      "oldPrice": 16,
+      "newPrice": 18,
+      "oldCost": 8,
+      "newCost": 8.5,
+      "reason": "节庆需求上涨，调整售价"
+    },
+    {
+      "id": "ph_seed_3",
+      "flowerId": "f_seed_2",
+      "date": "2026-10-30T07:30:00.000Z",
+      "oldPrice": 13.5,
+      "newPrice": 15,
+      "oldCost": 6.8,
+      "newCost": 7.2,
+      "reason": "品质升级，更新售价"
+    },
+    {
+      "id": "ph_seed_4",
+      "flowerId": "f_seed_3",
+      "date": "2026-10-24T07:30:00.000Z",
+      "oldPrice": 6.5,
+      "newPrice": 7,
+      "oldCost": 2.8,
+      "newCost": 3,
+      "reason": "进货成本变化"
+    },
+    {
+      "id": "ph_seed_5",
+      "flowerId": "f_seed_3",
+      "date": "2026-11-04T07:30:00.000Z",
+      "oldPrice": 7,
+      "newPrice": 8,
+      "oldCost": 3,
+      "newCost": 3.2,
+      "reason": "花期与品质提升"
+    },
+    {
+      "id": "ph_seed_6",
+      "flowerId": "f_seed_4",
+      "date": "2026-10-27T07:30:00.000Z",
+      "oldPrice": 10,
+      "newPrice": 11,
+      "oldCost": 5,
+      "newCost": 5.2,
+      "reason": "到货品质较好"
+    },
+    {
+      "id": "ph_seed_7",
+      "flowerId": "f_seed_4",
+      "date": "2026-11-05T07:30:00.000Z",
+      "oldPrice": 11,
+      "newPrice": 12,
+      "oldCost": 5.2,
+      "newCost": 5.5,
+      "reason": "节前需求增加"
+    },
+    {
+      "id": "ph_seed_8",
+      "flowerId": "f_seed_5",
+      "date": "2026-11-01T07:30:00.000Z",
+      "oldPrice": 9,
+      "newPrice": 10,
+      "oldCost": 3.8,
+      "newCost": 4,
+      "reason": "成本上调"
+    },
+    {
+      "id": "ph_seed_9",
+      "flowerId": "f_seed_6",
+      "date": "2026-10-29T07:30:00.000Z",
+      "oldPrice": 32,
+      "newPrice": 36,
+      "oldCost": 16,
+      "newCost": 17,
+      "reason": "花头饱满，调整定价"
+    },
+    {
+      "id": "ph_seed_10",
+      "flowerId": "f_seed_6",
+      "date": "2026-11-08T07:30:00.000Z",
+      "oldPrice": 36,
+      "newPrice": 38,
+      "oldCost": 17,
+      "newCost": 18,
+      "reason": "周末花礼需求增加"
+    },
+    {
+      "id": "ph_seed_11",
+      "flowerId": "f_seed_7",
+      "date": "2026-10-26T07:30:00.000Z",
+      "oldPrice": 24,
+      "newPrice": 28,
+      "oldCost": 10.5,
+      "newCost": 12,
+      "reason": "更换供应商，成本上涨"
+    },
+    {
+      "id": "ph_seed_12",
+      "flowerId": "f_seed_8",
+      "date": "2026-10-17T07:30:00.000Z",
+      "oldPrice": 88,
+      "newPrice": 98,
+      "oldCost": 42,
+      "newCost": 45,
+      "reason": "年节礼品需求上涨"
+    }
+  ],
+  "movements": [
+    {
+      "id": "m_seed_restock_0",
+      "flowerId": "f_seed_1",
+      "type": "in",
+      "change": 42,
+      "before": 78,
+      "after": 120,
+      "unitCost": 8.5,
+      "note": "常规补货",
+      "date": "2026-11-10T02:20:00.000Z",
+      "orderId": null
+    },
+    {
+      "id": "m_seed_restock_5",
+      "flowerId": "f_seed_6",
+      "type": "in",
+      "change": 8,
+      "before": 15,
+      "after": 23,
+      "unitCost": 18,
+      "note": "常规补货",
+      "date": "2026-11-10T02:20:00.000Z",
+      "orderId": null
+    },
+    {
+      "id": "m_seed_loss_1",
+      "flowerId": "f_seed_5",
+      "type": "loss",
+      "change": -3,
+      "before": 15,
+      "after": 12,
+      "unitCost": 4,
+      "note": "花瓣折损报损",
+      "date": "2026-11-09T09:10:00.000Z",
+      "orderId": null
+    },
+    {
+      "id": "m_seed_restock_2",
+      "flowerId": "f_seed_3",
+      "type": "in",
+      "change": 63,
+      "before": 117,
+      "after": 180,
+      "unitCost": 3.2,
+      "note": "常规补货",
+      "date": "2026-11-09T02:20:00.000Z",
+      "orderId": null
+    },
+    {
+      "id": "m_seed_restock_3",
+      "flowerId": "f_seed_4",
+      "type": "in",
+      "change": 22,
+      "before": 42,
+      "after": 64,
+      "unitCost": 5.5,
+      "note": "常规补货",
+      "date": "2026-11-08T02:20:00.000Z",
+      "orderId": null
+    },
+    {
+      "id": "m_seed_restock_1",
+      "flowerId": "f_seed_2",
+      "type": "in",
+      "change": 10,
+      "before": 18,
+      "after": 28,
+      "unitCost": 7.2,
+      "note": "常规补货",
+      "date": "2026-11-07T02:20:00.000Z",
+      "orderId": null
+    },
+    {
+      "id": "m_seed_restock_6",
+      "flowerId": "f_seed_7",
+      "type": "in",
+      "change": 15,
+      "before": 27,
+      "after": 42,
+      "unitCost": 12,
+      "note": "常规补货",
+      "date": "2026-11-06T02:20:00.000Z",
+      "orderId": null
+    },
+    {
+      "id": "m_seed_restock_7",
+      "flowerId": "f_seed_8",
+      "type": "in",
+      "change": 8,
+      "before": 1,
+      "after": 9,
+      "unitCost": 45,
+      "note": "常规补货",
+      "date": "2026-11-05T02:20:00.000Z",
+      "orderId": null
+    },
+    {
+      "id": "m_seed_restock_4",
+      "flowerId": "f_seed_5",
+      "type": "in",
+      "change": 8,
+      "before": 4,
+      "after": 12,
+      "unitCost": 4,
+      "note": "常规补货",
+      "date": "2026-11-04T02:20:00.000Z",
+      "orderId": null
+    },
+    {
+      "id": "m_seed_in_4",
+      "flowerId": "f_seed_5",
+      "type": "initial",
+      "change": 54,
+      "before": 0,
+      "after": 54,
+      "unitCost": 4,
+      "note": "期初建档入库",
+      "date": "2026-10-23T02:20:00.000Z",
+      "orderId": null
+    },
+    {
+      "id": "m_seed_in_3",
+      "flowerId": "f_seed_4",
+      "type": "initial",
+      "change": 103,
+      "before": 0,
+      "after": 103,
+      "unitCost": 5.5,
+      "note": "期初建档入库",
+      "date": "2026-10-20T02:20:00.000Z",
+      "orderId": null
+    },
+    {
+      "id": "m_seed_in_5",
+      "flowerId": "f_seed_6",
+      "type": "initial",
+      "change": 68,
+      "before": 0,
+      "after": 68,
+      "unitCost": 18,
+      "note": "期初建档入库",
+      "date": "2026-10-17T02:20:00.000Z",
+      "orderId": null
+    },
+    {
+      "id": "m_seed_in_2",
+      "flowerId": "f_seed_3",
+      "type": "initial",
+      "change": 216,
+      "before": 0,
+      "after": 216,
+      "unitCost": 3.2,
+      "note": "期初建档入库",
+      "date": "2026-10-16T02:20:00.000Z",
+      "orderId": null
+    },
+    {
+      "id": "m_seed_in_1",
+      "flowerId": "f_seed_2",
+      "type": "initial",
+      "change": 61,
+      "before": 0,
+      "after": 61,
+      "unitCost": 7.2,
+      "note": "期初建档入库",
+      "date": "2026-10-14T02:20:00.000Z",
+      "orderId": null
+    },
+    {
+      "id": "m_seed_in_6",
+      "flowerId": "f_seed_7",
+      "type": "initial",
+      "change": 90,
+      "before": 0,
+      "after": 90,
+      "unitCost": 12,
+      "note": "期初建档入库",
+      "date": "2026-10-11T02:20:00.000Z",
+      "orderId": null
+    },
+    {
+      "id": "m_seed_in_0",
+      "flowerId": "f_seed_1",
+      "type": "initial",
+      "change": 150,
+      "before": 0,
+      "after": 150,
+      "unitCost": 8.5,
+      "note": "期初建档入库",
+      "date": "2026-10-08T02:20:00.000Z",
+      "orderId": null
+    },
+    {
+      "id": "m_seed_in_7",
+      "flowerId": "f_seed_8",
+      "type": "initial",
+      "change": 60,
+      "before": 0,
+      "after": 60,
+      "unitCost": 45,
+      "note": "期初建档入库",
+      "date": "2026-10-02T02:20:00.000Z",
+      "orderId": null
+    }
+  ],
+  "meta": {
+    "createdAt": "2026-11-11T10:51:01.787Z",
+    "updatedAt": "2026-11-11T10:51:01.787Z"
+  }
+}

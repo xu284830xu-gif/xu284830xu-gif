@@ -1,0 +1,17 @@
+{
+  "name": "huajian-flower-os",
+  "version": "1.2.0",
+  "private": true,
+  "type": "module",
+  "description": "花间集 · 花卉经营与顾客在线花房（多人协作版）",
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server/server.mjs",
+    "seed": "node server/scripts/make-seed.mjs",
+    "test:api": "node server/scripts/test-api.mjs",
+    "test:collab": "node server/scripts/test-collab.mjs",
+    "test:storefront": "node server/scripts/test-storefront.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
