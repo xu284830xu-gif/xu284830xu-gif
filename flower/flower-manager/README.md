@@ -8,9 +8,13 @@
 
 ```powershell
 npm start
+# 机器上没有 npm 时，直接用 node：
+node server/server.mjs
 ```
 
 打开 http://localhost:8787
+
+> 详细的启动命令、端口修改、Windows 脚本执行策略、常见报错见 **[docs/启动说明.md](docs/启动说明.md)**。
 
 全栈版新增：
 

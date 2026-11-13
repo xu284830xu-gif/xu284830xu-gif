@@ -1,0 +1,46 @@
+# 花间集接口调试 · 原始输出（curl 实测，2026-11-13 21:22）
+
+## 1) GET /api/health
+命令: curl.exe -s -w "`n[HTTP %{http_code} · %{time_total}s]`n" http://127.0.0.1:8787/api/health
+{"ok":true,"service":"花间集 API","version":"1.2.0","collaboration":{"mode":"shared-shop","sse":true,"pollingFallback":true,"online":0},"uptimeSeconds":34,"now":"2026-11-13T13:22:44.832Z","state":{"flowers":8,"orders":23,"movements":38,"priceHistory":14,"revision":45,"online":0,"updatedAt":"2026-11-12T03:12:46.055Z"},"assistant":{"provider":"pollinations","model":"openai-fast","endpoint":"https://text.pollinations.ai/openai","tools":true,"mode":"model+tools","configured":true}}
+[HTTP 200 · 0.001717s]
+
+## 2) GET /api/flowers
+命令: curl.exe -s -w "`n[HTTP %{http_code} · %{time_total}s]`n" http://127.0.0.1:8787/api/flowers
+{"flowers":[{"id":"f_seed_1","name":"自由精神玫瑰","variety":"自由精神","category":"玫瑰","color":"粉色","grade":"A","unit":"枝","cost":8.5,"price":30,"stock":105,"minStock":40,"supplier":"云岭花材","location":"冷藏柜 A1","note":"花瓣层叠，适合作为花束主花","createdAt":"2026-10-08T02:20:00.000Z","restockedAt":"2026-11-10T02:20:00.000Z","active":true},{"id":"f_seed_2","name":"白荔枝玫瑰","variety":"白荔枝","category":"玫瑰","color":"白色","grade":"A","unit":"枝","cost":7.2,"price":15,"stock":34,"minStock":30,"supplier":"云岭花材","location":"冷藏柜 A2","note":"香气清甜，婚礼花艺常用","createdAt":"2026-10-14T02:20:00.000Z","restockedAt":"2026-11-12T03:11:20.584Z","active":true},{"id":"f_seed_3","name":"香槟洋桔梗","variety":"香槟初恋","category":"洋桔梗","color":"香槟","grade":"A","unit":"枝","cost":3.2,"price":8,"stock":180,"minStock":50,"supplier":"四季鲜花","location":"冷藏柜 B1","note":"花期长，适合日常花束搭配","createdAt":"2026-10-16T02:20:00.000Z","restockedAt":"2026-11-09T02:20:00.000Z","active":true},{"id":"f_seed_4","name":"粉色印记郁金香","variety":"粉色印记","category":"郁金香","color":"粉色","grade":"A","unit":"枝","cost":5.5,"price":12,"stock":63,"minStock":30,"supplier":"荷兰花坊","location":"冷藏柜 B2","note":"春季畅销款，注意保持直立吸水","createdAt":"2026-10-20T02:20:00.000Z","restockedAt":"2026-11-08T02:20:00.000Z","active":true},{"id":"f_seed_5","name":"奶油向日葵","variety":"奶油","category":"配花","color":"黄色","grade":"B","unit":"枝","cost":4,"price":10,"stock":115,"minStock":20,"supplier":"田野花材","location":"常温花架 C1","note":"阳光感强，适合单支包装","createdAt":"2026-10-23T02:20:00.000Z","restockedAt":"2026-11-12T03:14:09.443Z","active":true},{"id":"f_seed_6","name":"无尽夏绣球","variety":"无尽夏","category":"绣球","color":"蓝色","grade":"A","unit":"枝","cost":18,"price":38,"stock":18,"minStock":10,"supplier":"江南花圃","location":"冷藏柜 A3","note":"易脱水，到店后深水养护","createdAt":"2026-10-17T02:20:00.000Z","restockedAt":"2026-11-10T02:20:00.000Z","active":true},{"id":"f_seed_7","name":"圆叶尤加利","variety":"圆叶","category":"叶材","color":"绿色","grade":"A","unit":"扎","cost":12,"price":28,"stock":33,"minStock":15,"supplier":"山野叶材","location":"常温花架 C2","note":"花束配叶，可自然风干","createdAt":"2026-10-11T02:20:00.000Z","restockedAt":"2026-11-06T02:20:00.000Z","active":true},{"id":"f_seed_8","name":"白花蝴蝶兰","variety":"白花","category":"兰花","color":"白色","grade":"A","unit":"盆","cost":45,"price":98,"stock":7,"minStock":5,"supplier":"兰亭园艺","location":"展示台 D1","note":"盆栽礼赠款，避免冷风直吹","createdAt":"2026-10-02T02:20:00.000Z","restockedAt":"2026-11-05T02:20:00.000Z","active":true}],"total":8}
+[HTTP 200 · 0.001225s]
+
+## 3) GET /api/summary?days=7
+命令: curl.exe -s -w "`n[HTTP %{http_code} · %{time_total}s]`n" "http://127.0.0.1:8787/api/summary?days=7"
+{"range_days":7,"order_count":11,"units":97,"revenue":1902,"cost":867.6,"gross_profit":1034.4,"gross_margin":0.54,"loss_cost":12,"net_profit":1022.4,"top_products":[{"name":"自由精神玫瑰","units":31,"revenue":558,"profit":294.5,"margin":0.53},{"name":"圆叶尤加利","units":11,"revenue":308,"profit":176,"margin":0.57},{"name":"白花蝴蝶兰","units":3,"revenue":294,"profit":159,"margin":0.54},{"name":"无尽夏绣球","units":6,"revenue":228,"profit":120,"margin":0.53},{"name":"白荔枝玫瑰","units":12,"revenue":180,"profit":93.6,"margin":0.52}],"top_customers":[{"name":"徐文","orders":2,"revenue":365},{"name":"www","orders":1,"revenue":310},{"name":"111","orders":1,"revenue":235},{"name":"顾言","orders":1,"revenue":210},{"name":"林晚","orders":1,"revenue":188}],"generated_at":"2026-11-13T13:22:44.874Z"}
+[HTTP 200 · 0.001282s]
+
+## 4) POST /api/storefront/orders（故意缺 customer.name）
+请求体 bad1.json: {"paymentMethod":"wechat","items":[{"flowerId":"f_seed_1","qty":1}]}
+命令: curl.exe -s -i -X POST -H "Content-Type: application/json" --data-binary "@bad1.json" http://127.0.0.1:8787/api/storefront/orders
+HTTP/1.1 400 Bad Request
+Content-Type: application/json; charset=utf-8
+Cache-Control: no-store
+X-Content-Type-Options: nosniff
+Access-Control-Allow-Origin: *
+Date: Fri, 13 Nov 2026 13:22:36 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"error":"请填写 2-20 个字的收货人称呼。"}
+
+## 5) POST /api/storefront/orders（故意缺 items）
+请求体 bad2.json: {"customer":{"name":"王女士","phone":"13800000000"},"paymentMethod":"wechat"}
+命令: curl.exe -s -i -X POST -H "Content-Type: application/json" --data-binary "@bad2.json" http://127.0.0.1:8787/api/storefront/orders
+HTTP/1.1 400 Bad Request
+Content-Type: application/json; charset=utf-8
+Cache-Control: no-store
+X-Content-Type-Options: nosniff
+Access-Control-Allow-Origin: *
+Date: Fri, 13 Nov 2026 13:22:36 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"error":"购物清单不能为空。"}

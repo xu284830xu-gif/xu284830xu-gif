@@ -1,0 +1,30 @@
+# 花间集 · systemd 单元模板（手动部署用；install.sh 会自动生成并填入真实路径）
+# 放置：/etc/systemd/system/huajian.service
+# 生效：systemctl daemon-reload && systemctl enable --now huajian
+#
+# 需要按你的实际路径替换：
+#   __NODE_BIN__    node 可执行文件，例如 /usr/local/bin/node
+#   __APP_DIR__     应用目录，例如 /opt/huajian/flower/flower-manager
+#   __SERVICE_USER__ 运行账号，例如 huajian
+
+[Unit]
+Description=Huajian Flower Manager (花间集)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=__SERVICE_USER__
+Group=__SERVICE_USER__
+WorkingDirectory=__APP_DIR__
+EnvironmentFile=-/etc/huajian.env
+ExecStart=__NODE_BIN__ server/server.mjs
+Restart=always
+RestartSec=3
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=full
+ProtectHome=read-only
+
+[Install]
+WantedBy=multi-user.target
