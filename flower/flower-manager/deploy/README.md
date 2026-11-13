@@ -142,6 +142,18 @@ sudo certbot --nginx -d your-domain.com
 
 > 反代配置里 `proxy_buffering off` 是必须的：协作功能用 SSE（`/api/events`），缓冲区会把事件攒住不发，前端会退化成 2.5 秒轮询（能同步，但实时性变差）。
 
+### 服务器上已经有 Caddy 时
+
+如果 80/443 已被 Caddy 占用（`curl -I http://<IP>/` 返回头里有 `Server: Caddy`），不用装 Nginx，直接把站点块追加进去：
+
+```bash
+sudo tee -a /etc/caddy/Caddyfile < flower/flower-manager/deploy/caddy-huajian.conf
+sudo caddy validate --config /etc/caddy/Caddyfile
+sudo systemctl reload caddy
+```
+
+> 关键点：只用公网 IP 访问时必须写 `http://<IP> { … }`。Caddy 默认会把 http 308 跳到 https，而它给裸 IP 签不出证书，结果就是握手直接失败、页面打不开。
+
 ---
 
 ## 5. 安全加固（很重要）
