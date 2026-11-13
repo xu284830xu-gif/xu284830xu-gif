@@ -76,7 +76,10 @@ if ! id "$SERVICE_USER" >/dev/null 2>&1; then
   log "已创建账号 $SERVICE_USER"
 fi
 
-if [ -d "$APP_ROOT/.git" ]; then
+if [ "${SKIP_GIT:-0}" = "1" ]; then
+  log "跳过 git（SKIP_GIT=1），使用已上传的代码"
+  [ -f "$APP_DIR/server/server.mjs" ] || die "没有找到 $APP_DIR/server/server.mjs：请先把代码上传到 $APP_ROOT（保持 flower/flower-manager 结构）"
+elif [ -d "$APP_ROOT/.git" ]; then
   log "更新代码：git pull"
   git -C "$APP_ROOT" fetch --depth 1 origin main
   git -C "$APP_ROOT" reset --hard origin/main
@@ -111,7 +114,9 @@ EOF
   chmod 600 "$ENV_FILE"
   log "已生成 $ENV_FILE"
 else
-  log "沿用已有配置 $ENV_FILE"
+  # 重跑时同步端口与监听地址，但保留已有的 AI Key 等配置
+  sed -i "s/^PORT=.*/PORT=$PORT/; s/^HOST=.*/HOST=$BIND_HOST/" "$ENV_FILE"
+  log "沿用已有配置 $ENV_FILE（已同步 PORT=$PORT HOST=$BIND_HOST）"
 fi
 
 # ---------- 5. systemd ----------

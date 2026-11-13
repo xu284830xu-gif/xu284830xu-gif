@@ -58,6 +58,29 @@ sudo BIND_HOST=0.0.0.0 bash install.sh
 
 ---
 
+### 想出网受限时（不拉 GitHub，改成本地上传）
+
+```powershell
+# 本地（Windows PowerShell，自带 bsdtar）
+tar -czf flower-manager.tar.gz -C 'E:\花卉' flower-manager
+scp flower-manager.tar.gz root@<公网IP>:/root/
+```
+
+```bash
+# 服务器：解到 /opt/huajian/flower，最终路径为 /opt/huajian/flower/flower-manager
+sudo mkdir -p /opt/huajian/flower
+sudo tar -xzf /root/flower-manager.tar.gz -C /opt/huajian/flower
+
+# 跳过 git，直接装 Node + 建服务
+sudo SKIP_GIT=1 BIND_HOST=0.0.0.0 bash install.sh
+```
+
+之后更新代码：本地重新打包上传，`sudo tar -xzf /root/flower-manager.tar.gz -C /opt/huajian/flower && sudo systemctl restart huajian`。
+
+> 用 tar 而不是 zip：Windows 打的 zip 里路径是反斜杠，Linux 上 `unzip` 会把文件名弄乱。
+
+---
+
 ## 3. 手动部署（不想跑脚本时）
 
 ```bash
